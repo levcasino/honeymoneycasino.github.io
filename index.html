@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Casino: Онлайн-Казино с Быстрыми Выплатами</title>
+    <meta name="description" content="Актуальное зеркало Banda Casino: мгновенный вход на официальный сайт, простая регистрация, приветственные бонусы, быстрые выплаты и поддержка 24/7.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        banda: {
+                            dark: '#171A24',
+                            darker: '#0F1117',
+                            card: '#232732',
+                            primary: '#FFB800', // Gold
+                            primaryHover: '#E5A500',
+                            accent: '#FF4D4D', // Red
+                            text: '#F3F4F6',
+                            muted: '#9CA3AF'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-banda-dark text-banda-text antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-banda-dark/95 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="http://static.photos/gaming/120x120/1" alt="Banda Casino Logo" class="w-10 h-10 rounded-lg object-cover transform group-hover:rotate-6 transition-transform">
+                <span class="text-2xl font-bold tracking-tight hidden sm:block">BANDA</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#games" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
+                    Игры
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#bonuses" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
+                    Бонусы
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#tournaments" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
+                    Турниры
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#vip" class="text-sm font-medium text-banda-primary hover:text-banda-primaryHover transition-colors flex items-center gap-1">
+                    <i data-lucide="crown" class="w-4 h-4"></i>
+                    VIP
+                </a>
+            </nav>
+
+            <!-- Auth Buttons -->
+            <div class="hidden lg:flex items-center gap-4">
+                <button class="px-5 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">
+                    Вход
+                </button>
+                <button class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all transform hover:-translate-y-0.5">
+                    Регистрация
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="fixed inset-0 bg-banda-darker z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 px-6">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white p-2">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <div class="flex gap-3 mb-8">
+                <button class="flex-1 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">Вход</button>
+                <button class="flex-1 py-2.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all">Регистрация</button>
+            </div>
+            <nav class="flex flex-col gap-6 text-xl font-medium">
+                <a href="#games" class="mobile-link">Игры</a>
+                <a href="#bonuses" class="mobile-link">Бонусы</a>
+                <a href="#tournaments" class="mobile-link">Турниры</a>
+                <a href="#vip" class="mobile-link text-banda-primary">VIP Клуб</a>
+            </nav>
+            <div class="mt-auto mb-8 flex flex-col gap-4">
+                <button class="w-full py-4 rounded-xl border border-white/10 text-center font-medium">Вход</button>
+                <button class="w-full py-4 rounded-xl bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Slider Section -->
+        <section class="relative max-w-[1600px] mx-auto px-4 py-6 lg:py-10">
+            <div class="relative rounded-2xl overflow-hidden aspect-[16/7] md:aspect-[21/9] shadow-2xl shadow-black/50 border border-white/5 group">
+                <!-- Slides Container -->
+                <div id="hero-slider" class="flex transition-transform duration-500 ease-in-out h-full">
+                    <!-- Slides will be injected by JS -->
+                </div>
+
+                <!-- Controls -->
+                <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-banda-primary/90 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 disabled:opacity-20">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-banda-primary/90 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div id="slider-indicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    <!-- Indicators injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories & Filters -->
+        <section class="container mx-auto px-4 mb-8">
+            <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <button class="px-5 py-2 rounded-full bg-banda-primary text-banda-darker font-bold text-sm whitespace-nowrap">🔥 Все игры</button>
+                <button class="px-5 py-2 rounded-full bg-banda-card border border-white/5 hover:border-banda-primary/50 hover:text-banda-primary transition-colors text-sm whitespace-nowrap">🎰 Слоты</button>
+                <button class="px-5 py-2 rounded-full bg-banda-card border border-white/5 hover:border-banda-primary/50 hover:text-banda-primary transition-colors text-sm whitespace-nowrap">🃏 Live Казино</button>
+                <button class="px-5 py-2 rounded-full bg-banda-card border border-white/5 hover:border-banda-primary/50 hover:text-banda-primary transition-colors text-sm whitespace-nowrap">⚡ Быстрые игры</button>
+                <button class="px-5 py-2 rounded-full bg-banda-card border border-white/5 hover:border-banda-primary/50 hover:text-banda-primary transition-colors text-sm whitespace-nowrap">✨ Новинки</button>
+            </div>
+        </section>
+
+        <!-- Top Games Grid -->
+        <section id="games" class="container mx-auto px-4 mb-16">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2">Топ Онлайн Слоты</h2>
+                    <p class="text-banda-muted text-sm">Лучшие игры, выбранные нашими игроками</p>
+                </div>
+                <a href="#" class="text-banda-primary hover:text-banda-primaryHover font-medium text-sm flex items-center gap-1">
+                    Все игры <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Games Grid -->
+            <div id="games-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                <!-- Games will be injected by JS -->
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button id="load-more-games" class="px-8 py-3 rounded-xl bg-banda-card border border-white/10 hover:border-banda-primary/50 text-sm font-medium transition-all">
+                    Показать еще
+                </button>
+            </div>
+        </section>
+
+        <!-- Bonuses Section -->
+        <section id="bonuses" class="bg-gradient-to-b from-banda-darker to-banda-dark py-16 border-y border-white/5">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Бонусы и Акции</h2>
+                    <p class="text-banda-muted max-w-2xl mx-auto">Участвуй в турнирах, получай кэшбэк и забирай приветственные бонусы</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Welcome Bonus -->
+                    <div class="bg-banda-card rounded-2xl overflow-hidden border border-white/5 hover:border-banda-primary/30 transition-all hover:transform hover:-translate-y-1 group relative">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1728721451245_Welcome.png" alt="Welcome Bonus" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-banda-card to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="inline-block px-3 py-1 rounded-full bg-banda-primary/20 text-banda-primary text-xs font-bold mb-3">Эксклюзив</div>
+                            <h3 class="text-xl font-bold mb-2">Приветственный Бонус</h3>
+                            <p class="text-banda-muted text-sm mb-4">Получи 750 ФС на первый депозит и удвой свой стартовый капитал!</p>
+                            <button class="w-full py-2.5 rounded-lg bg-banda-primary text-banda-darker font-bold text-sm hover:bg-banda-primaryHover transition-colors">
+                                Активировать
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fortune Wheel -->
+                    <div class="bg-banda-card rounded-2xl overflow-hidden border border-white/5 hover:border-banda-primary/30 transition-all hover:transform hover:-translate-y-1 group relative">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1728731135783_Wheel.png" alt="Fortune Wheel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-banda-card to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="inline-block px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold mb-3">Бесплатно</div>
+                            <h3 class="text-xl font-bold mb-2">Колесо Фортуны</h3>
+                            <p class="text-banda-muted text-sm mb-4">Крути колесо каждый день и получай бездепозитные бонусы!</p>
+                            <button class="w-full py-2.5 rounded-lg bg-banda-primary text-banda-darker font-bold text-sm hover:bg-banda-primaryHover transition-colors">
+                                Крутить
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Telegram Bonus -->
+                    <div class="bg-banda-card rounded-2xl overflow-hidden border border-white/5 hover:border-banda-primary/30 transition-all hover:transform hover:-translate-y-1 group relative md:col-span-2 lg:col-span-1">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1773401746714_TGonWEB_NBANDA.png" alt="Telegram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-banda-card to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold mb-3">Сообщество</div>
+                            <h3 class="text-xl font-bold mb-2">Канал BANDA в ТГ</h3>
+                            <p class="text-banda-muted text-sm mb-4">Бонусы, акции и раздачи — каждый день в нашем Telegram канале.</p>
+                            <button class="w-full py-2.5 rounded-lg bg-blue-500 text-white font-bold text-sm hover:bg-blue-600 transition-colors flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                Подписаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features/Why Us -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-16 h-16 bg-banda-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-banda-primary">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Мгновенные выплаты</h3>
+                    <p class="text-banda-muted text-sm">Автоматическая обработка заявок на вывод 24/7 без задержек.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-16 h-16 bg-banda-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-banda-primary">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Надежная безопасность</h3>
+                    <p class="text-banda-muted text-sm">Современные технологии шифрования и защита личных данных.</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-16 h-16 bg-banda-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-banda-primary">
+                        <i data-lucide="headphones" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Поддержка 24/7</h3>
+                    <p class="text-banda-muted text-sm">Наша команда всегда готова помочь тебе с любым вопросом.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tournaments Banner -->
+        <section id="tournaments" class="container mx-auto px-4 mb-16">
+            <div class="relative rounded-2xl overflow-hidden bg-banda-card border border-white/5">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1775227610378_GRAND%20EASTER%20HEIST%20Tournament%20%281%29.png" alt="Tournament" class="w-full h-full object-cover opacity-30">
+                </div>
+                <div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left max-w-xl">
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 text-black text-xs font-bold mb-4 animate-pulse-slow">
+                            🔥 АКТИВНЫЙ ТУРНИР
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-4">500 000 €</h2>
+                        <h3 class="text-xl text-banda-primary mb-2">Пасхальный турнир от Endorphina!</h3>
+                        <p class="text-banda-muted mb-6">Испытай удачу и забери свою долю из огромного призового фонда.</p>
+                        <button class="px-8 py-3 rounded-xl bg-white text-banda-darker font-bold hover:bg-gray-200 transition-colors">
+                            Участвовать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEO Text Block -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center">О Banda Casino — Лидере Онлайн-гемблинга</h2>
+            <div class="prose prose-invert prose-lg max-w-none text-banda-muted leading-relaxed space-y-4">
+                <p>
+                    <strong class="text-banda-text">Banda Casino</strong> — это современное онлайн-казино, которое предлагает игрокам безопасный и захватывающий опыт игры. Наша платформа объединяет лучшие игровые автоматы от мировых провайдеров, такие как Pragmatic Play, NetEnt, Play'n GO, Evolution и многие другие. Более 5000 игр, включая слоты, live-казино и быстрые игры, доступны для мгновенной игры без необходимости скачивания.
+                </p>
+                <p>
+                    Мы гордимся нашими щедрыми бонусами: приветственный пакет для новых игроков, кэшбэк до 20%, еженедельные турниры с призовыми фондами до 500 000 € и бездепозитные бонусы в колесе фортуны. <strong class="text-banda-text">Быстрые выплаты</strong> — наш приоритет: обрабатываем заявки на вывод средств автоматически 24/7 в течение 15 минут.
+                </p>
+                <p>
+                    Banda Casino гарантирует полную безопасность персональных данных и финансовых транзакций благодаря современному шифрованию SSL. Наша служба поддержки работает круглосуточно и готова помочь с любыми вопросами. Присоединяйтесь к тысячам довольных игроков и наслаждайтесь игрой responsibly!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-banda-darker border-t border-white/5 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-banda-primary rounded-lg flex items-center justify-center">
+                            <span class="text-banda-darker font-bold">B</span>
+                        </div>
+                        <span class="text-xl font-bold">BANDA</span>
+                    </a>
+                    <p class="text-banda-muted text-sm mb-6 leading-relaxed">
+                        Лучшее онлайн-казино с быстрыми выплатами, огромным выбором игр и щедрыми бонусами.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-banda-primary hover:text-banda-darker transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-banda-primary hover:text-banda-darker transition-colors">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Информация</h4>
+                    <ul class="space-y-3 text-sm text-banda-muted">
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">О нас</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">Бонусы</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">VIP Клуб</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">Партнёрка</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Помощь</h4>
+                    <ul class="space-y-3 text-sm text-banda-muted">
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">Чат поддержки</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">Правила и условия</a></li>
+                        <li><a href="#" class="hover:text-banda-primary transition-colors">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">18+</h4>
+                    <p class="text-xs text-banda-muted mb-4">
+                        Banda.casino принадлежит и управляется компанией 3-102-937610 SRL. Лицензия № ALSI-202510054-FI2.
+                    </p>
+                    <div class="flex gap-2 opacity-50">
+                        <div class="w-10 h-6 bg-white/10 rounded"></div>
+                        <div class="w-10 h-6 bg-white/10 rounded"></div>
+                        <div class="w-10 h-6 bg-white/10 rounded"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-banda-muted">
+                <p>&copy; 2025 Banda Casino. Все права защищены.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    Система работает стабильно
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
