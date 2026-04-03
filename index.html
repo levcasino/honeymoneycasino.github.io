@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banda Casino: Онлайн-Казино с Быстрыми Выплатами</title>
     <meta name="description" content="Актуальное зеркало Banda Casino: мгновенный вход на официальный сайт, простая регистрация, приветственные бонусы, быстрые выплаты и поддержка 24/7.">
-    <script src="tailwindcss.js></script>
+    <script src="/tailwindcss.js"></script>
     <link href="css2.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -72,8 +72,6 @@
                     VIP
                 </a>
             </nav>
-
-            <!-- Auth Buttons -->
             <div class="hidden lg:flex items-center gap-4">
                 <button class="px-5 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">
                     Вход
@@ -82,14 +80,10 @@
                     Регистрация
                 </button>
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="fixed inset-0 bg-banda-darker z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 px-6">
             <button id="close-mobile-menu" class="absolute top-6 right-6 text-white p-2">
                 <i data-lucide="x" class="w-8 h-8"></i>
@@ -110,32 +104,21 @@
             </div>
         </div>
     </header>
-
     <main class="pt-20">
-        <!-- Hero Slider Section -->
         <section class="relative max-w-[1600px] mx-auto px-4 py-6 lg:py-10">
             <div class="relative rounded-2xl overflow-hidden aspect-[16/7] md:aspect-[21/9] shadow-2xl shadow-black/50 border border-white/5 group">
-                <!-- Slides Container -->
                 <div id="hero-slider" class="flex transition-transform duration-500 ease-in-out h-full">
-                    <!-- Slides will be injected by JS -->
                 </div>
-
-                <!-- Controls -->
                 <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-banda-primary/90 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 disabled:opacity-20">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
                 </button>
                 <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-banda-primary/90 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
                     <i data-lucide="chevron-right" class="w-6 h-6"></i>
                 </button>
-
-                <!-- Indicators -->
                 <div id="slider-indicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                    <!-- Indicators injected by JS -->
                 </div>
             </div>
         </section>
-
-        <!-- Categories & Filters -->
         <section class="container mx-auto px-4 mb-8">
             <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
                 <button class="px-5 py-2 rounded-full bg-banda-primary text-banda-darker font-bold text-sm whitespace-nowrap">🔥 Все игры</button>
@@ -145,8 +128,6 @@
                 <button class="px-5 py-2 rounded-full bg-banda-card border border-white/5 hover:border-banda-primary/50 hover:text-banda-primary transition-colors text-sm whitespace-nowrap">✨ Новинки</button>
             </div>
         </section>
-
-        <!-- Top Games Grid -->
         <section id="games" class="container mx-auto px-4 mb-16">
             <div class="flex items-end justify-between mb-6">
                 <div>
@@ -157,29 +138,21 @@
                     Все игры <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
-
-            <!-- Games Grid -->
             <div id="games-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                <!-- Games will be injected by JS -->
-            </div>
-            
+            </div>            
             <div class="mt-8 text-center">
                 <button id="load-more-games" class="px-8 py-3 rounded-xl bg-banda-card border border-white/10 hover:border-banda-primary/50 text-sm font-medium transition-all">
                     Показать еще
                 </button>
             </div>
         </section>
-
-        <!-- Bonuses Section -->
         <section id="bonuses" class="bg-gradient-to-b from-banda-darker to-banda-dark py-16 border-y border-white/5">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl md:text-4xl font-bold mb-3">Бонусы и Акции</h2>
                     <p class="text-banda-muted max-w-2xl mx-auto">Участвуй в турнирах, получай кэшбэк и забирай приветственные бонусы</p>
                 </div>
-
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Welcome Bonus -->
                     <div class="bg-banda-card rounded-2xl overflow-hidden border border-white/5 hover:border-banda-primary/30 transition-all hover:transform hover:-translate-y-1 group relative">
                         <div class="h-40 overflow-hidden relative">
                             <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1728721451245_Welcome.png" alt="Welcome Bonus" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -194,8 +167,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Fortune Wheel -->
                     <div class="bg-banda-card rounded-2xl overflow-hidden border border-white/5 hover:border-banda-primary/30 transition-all hover:transform hover:-translate-y-1 group relative">
                         <div class="h-40 overflow-hidden relative">
                             <img src="https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1728731135783_Wheel.png" alt="Fortune Wheel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
